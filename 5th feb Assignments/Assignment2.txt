@@ -1,0 +1,154 @@
+Assignment No: 2
+
+1. Create a project in Visual Studio
+select console App .Net Framework template
+Understand structure of the project
+
+2. WAP to add three numbers
+
+using System;
+
+    class three_num
+    {
+        static void Main()
+        {
+            Console.WriteLine("Enter Three Numbers:");
+            int n1 = Convert.ToInt32(Console.ReadLine());
+            int n2 = Convert.ToInt32(Console.ReadLine());
+            int n3 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("The sum of {0}, {1} and {2} is {3}", n1,n2,n3,n1+n2+n3);
+        }
+    }
+
+
+3. WAP to print sum and average of 1st 20 natural numbers
+
+using System;
+
+
+    class Class1
+    {
+        static void Main()
+        {
+            float sum = 0;
+            for(int i = 1; i <= 20; i++)
+            {
+                sum = sum + i;
+            }
+            float average = sum/20;
+            Console.WriteLine("The sum of the first 20 natural numbers is {0}", sum);
+            Console.WriteLine("The average of the first 20 natural numbers is {0}", average);
+        }
+    }
+
+4. WAP to print first 50 even numbers
+
+using System;
+
+class Class1
+{
+    static void Main()
+    {
+        Console.WriteLine("The first 50 even numbers are");
+        for (int i = 2; i <= 100; i += 2)
+        {
+            Console.WriteLine(i);
+        }
+    }
+}
+
+
+5. WAP to check whether a number is prime or not
+
+using System;
+
+class Class1
+{
+    static void Main()
+    {
+        int flag = 0,num;
+        Console.WriteLine("Enter the number to check if it is prime or not:");
+        num = Convert.ToInt32(Console.ReadLine());
+        for (int i = 2; i < num; i++)
+        {
+            if (num % i == 0)
+            {
+                flag = 0;
+                break;
+            }
+            else
+                flag = 1;
+        }
+        if (flag == 1)
+            Console.WriteLine(num + " is a prime number");
+        else
+            Console.WriteLine(num + " is not a prime number");
+    }
+}
+
+6. WAP to print table of entered number in following format
+
+5 * 1 = 5
+5 * 2 = 10
+
+using System;
+
+class Class1
+{
+    static void Main()
+    {
+        int num, product;
+        Console.WriteLine("Enter the number to see its multiplication tables:");
+        num = Convert.ToInt32(Console.ReadLine());
+        for (int i = 1; i <= 10; i++)
+        {
+            product = num * i;
+            Console.WriteLine("{0} * {1} = {2}", num, i, product);
+        }
+    }
+}
+
+7. WAP to take some numbers from user. Note the difference between ToIn16, ToInt32 , ToByte and other methods available
+
+using System;
+
+    class Class3
+    {
+        static void Main()
+        {
+            int n1, n2, n4;
+            long n3;
+            Console.WriteLine("Enter a number:");
+            n1 = Convert.ToInt16(Console.ReadLine());
+            Console.WriteLine("Enter a number:");
+            n2 = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Enter a number:");
+            n3 = Convert.ToInt64(Console.ReadLine());
+            Console.WriteLine("Enter a number:");
+            n4 = Convert.ToByte(Console.ReadLine());
+            Console.WriteLine(n1);
+            Console.WriteLine(n2);
+            Console.WriteLine(n3);
+            Console.WriteLine(n4);
+        }
+    }
+
+
+8. What is System in the program. What are Console and Convert? What are Write, WriteLine , ReadLine and ToByte
+
+• System is a namespace which Contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
+• Console is a class in the System namespace which is used to represent the standard input, output, and error streams for the console applications.
+• Convert is a class in the System namespace which converts a base data type to another base data type.
+• Write is a method in Console class which displays the output but do not provide a new line character.
+• WriteLine is a method in Console class which displays the output and also provides a new line character it the end of the string. This would set a new line for the next output.
+• ReadLine is a method in Console class which reads the next line of characters from the standard input stream.
+• ToByte is a method in Convert class which converts a specified value to an 8-bit unsigned integer.
+
+9. Is it mandatory to have a class in the project
+
+Yes
+
+10. Why is static added to Main() method?
+
+A main method is static since it is available to run when the C# program starts. It is the entry point of the program and runs without even creating an instance of the class.
+

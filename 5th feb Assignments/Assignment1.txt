@@ -1,0 +1,73 @@
+Assignment No: 1
+
+
+1. Create a project in Visual Studio
+select console App .Net Framework template
+Understand structure of the project
+
+2. WAP to add three numbers
+
+using System;
+
+    class Program
+    {
+        static void Main()
+        {
+        int n1 = 20;
+        int n2 = 50;
+        int sum = n1 + n2;
+        Console.WriteLine("The sum of {0} and {1} is {2}", n1, n2, sum);
+        }
+    }
+
+
+3. WAP to multiple 3 numbers
+
+using System;
+
+    class Program
+    {
+        static void Main()
+        {
+        int n1 = 77;
+        int n2 = 50;
+        int sum = n1 * n2;
+        Console.WriteLine("The product of {0} and {1} is {2}", n1, n2, sum);
+        }
+    }
+
+4. What is System in the program. What is Console? What are Write, WriteLine
+
+• System is a namespace which Contains fundamental classes and base classes that define commonly-used value and reference data types, events and event handlers, interfaces, attributes, and processing exceptions.
+• Console is a class in the System namespace which is used to represent the standard input, output, and error streams for the console applications.
+• Write is a method in Console class which displays the output but do not provide a new line character.
+• WriteLine is a method in Console class which displays the output and also provides a new line character it the end of the string. This would set a new line for the next output.
+
+5. Is it mandatory to have a class in the project
+
+Yes
+
+6. WAP to declare string and integer variables to hold id, name , address , salary  
+Display it in
+
+ Welcome Ajay , Your Details are as follows:
+ Your ID : 101
+ Your Address is : ABC , Delhi
+ Your Salary is :  25000
+
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        int id = 101;
+        string name = "Ajay";
+        string address = "ABC , Delhi";
+        int salary = 25000;
+        Console.WriteLine("Welcome {0} , Your Details are as follows:", name);
+        Console.WriteLine("Your ID : {0}", id);
+        Console.WriteLine("Your Address is : {0}", address);
+        Console.WriteLine("Your Salary is : {0}", salary);
+    }
+}
