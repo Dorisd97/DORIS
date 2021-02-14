@@ -1,0 +1,418 @@
+Assignment No : 1 (DLL)
+Create one dll with following functionalities : 
+
+Numeric Functions
+
+ 1. Add n no. of arguments
+ 2. Subtract 
+ 3. Multiply 
+ 4. Divide
+ 5. Find Max 
+ 6. Find Min
+ 7. Check a no. for even
+ 8. Check a no. for odd
+ 9. Check a no. for prime
+ 10. Display all even no.s with in a given range
+ 11. Display all odd no.s with in a given range
+ 12. Display all prime no.s with in a given range
+ 13. Diplay table of an entered no.
+ 14. Display tables from 1 to 10 of all no.s with in a given range
+ 15. Display tables from a given range of all no.s with in a given range
+ 16. Reverse a no.
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace MyFunctions
+{
+    public class NumericFunctions
+    {
+        //Add n no. of arguments
+        public int Add(params int[] num)
+        {
+            int sum = 0;
+            foreach (int x in num)
+            {
+                sum += x;
+            }
+            return sum;
+        }
+
+        //Subtract
+        public int Subtract(int num1, int num2)
+        {
+            return num1-num2;
+        }
+
+        //Multiply
+        public int Multiply(int num1, int num2)
+        {
+            return num1 * num2;
+        }
+
+        //Divide
+        public float Divide(int num1, int num2)
+        {
+            return (float)num1 / (float)num2;
+        }
+
+        //Find Max
+        public int Max(params int[] num)
+        {
+            int max = num[0];
+            for (int i = 0; i < num.Length; i++)
+            {
+                if (num[i] > max)
+                    max = num[i];
+            }
+            return max;
+        }
+
+        //Find Min
+        public int Min(params int[] num)
+        {
+            int min = num[0];
+            for (int i = 0; i < num.Length; i++)
+            {
+                if (num[i] < min)
+                    min = num[i];
+            }
+            return min;
+        }
+
+        //Check a no. for even
+        public Boolean CheckForEven(int num)
+        {
+            if (num % 2 == 0)
+                return true;
+            else
+                return false;
+        }
+
+        //Check a no. for odd
+        public Boolean CheckForOdd(int num)
+        {
+            if (num % 2 != 0)
+                return true;
+            else
+                return false;
+        }
+
+        //Check a no. for prime
+        public Boolean CheckForPrime(int num)
+        {
+            int flag = 0;
+            for (int i = 2; i < num; i++)
+            {
+                if (num % i == 0)
+                {
+                    flag = 0;
+                    break;
+                }
+                else
+                    flag = 1;
+            }
+            if (flag == 1)
+                return true;
+            else
+                return false;
+        }
+
+        //Display all even no.s with in a given range
+        public List<int> DisplayEvenNumbers(int StartRange, int StopRange)
+        {
+            List<int> EvenNumbers = new List<int>();
+            for (int i = StartRange; i <= StopRange; i++)
+            {
+                if (CheckForEven(i))
+                    EvenNumbers.Add(i);
+            }
+            return EvenNumbers;
+        }
+
+        //Display all odd no.s with in a given range
+        public List<int> DisplayOddNumbers(int StartRange, int StopRange)
+        {
+            List<int> OddNumbers = new List<int>();
+            for (int i = StartRange; i <= StopRange; i++)
+            {
+                if (CheckForOdd(i))
+                    OddNumbers.Add(i);
+            }
+            return OddNumbers;
+        }
+
+        //Display all prime no.s with in a given range
+        public List<int> DisplayPrimeNumbers(int StartRange, int StopRange)
+        {
+            List<int> PrimeNumbers = new List<int>();
+            for (int i = StartRange; i <= StopRange; i++)
+            {
+                if (CheckForPrime(i))
+                    PrimeNumbers.Add(i);
+            }
+            return PrimeNumbers;
+        }
+
+        //Diplay table of an entered no.
+        public void DisplayTables(int num)
+        {
+            int product;
+            for (int i = 1; i <= 10; i++)
+            {
+                product = num * i;
+                Console.WriteLine("{0} * {1} = {2}", num, i, product);
+            }
+        }
+
+        //Display tables from 1 to 10 of all no.s with in a given range
+        public void DisplayTablesRange(int StartRange, int StopRange)
+        {
+            for (int i = StartRange; i <= StopRange; i++)
+            {
+                    DisplayTables(i);
+            }
+        }
+
+        //Display tables from a given range of all no.s with in a given range
+        public void DisplayTablesinRanges(int StartRange, int StopRange, int StartTable, int StopTable)
+        {
+            int product;
+            for (int i = StartRange; i <= StopRange; i++)
+            {
+                for (int j = StartTable; j <= StopTable; j++)
+                {
+                    product = i * j;
+                    Console.WriteLine("{0} * {1} = {2}", i, j, product);
+                }
+            }
+        }
+
+        //Reverse a no.
+        public int ReverseNumber(int num)
+        {
+            int reverse = 0, rem;
+            while (num!=0)
+            {
+                rem = num % 10;
+                reverse = reverse * 10 + rem;
+                num /= 10;
+            }
+            return reverse;
+        }
+    }
+}
+
+
+ 1. Find no. of characters in a sentence
+ 2. Check for Palindrome
+ 3. Reverse a sentencene
+ 4. Find no. of vowels, consonants, integers and sp characters in a sentence
+ 5. Change case to upper case
+ 6. Change sentence to proper case
+ 7. Combine two sentences
+ 8. Remove extra spaces in a sentence
+ 9. Count no. of words in a sentence
+ 10.Search a substring in a sentence
+ 11.Find the no. of occurences of a substring in a sentence
+
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+namespace MyFunctions
+{
+    public class StringFunctions
+    {
+        //Find no. of characters in a sentence
+        public int NoOfCharacters(string str)
+        {
+            int count = 0;
+            foreach (char c in str)
+            {
+                if (!char.IsWhiteSpace(c))
+                    count++;
+
+            }
+            return count;
+        }
+
+        //Check for Palindrome
+        public Boolean Palindrome(string str)
+        {
+            string reverse = ReverseString(str);
+            string string1 = str;
+            if (reverse == string1)
+                return true;
+            else
+                return false;
+        }
+
+        //Reverse a sentence
+        public string ReverseString(string str)
+        {
+            string reverse = "";
+            for (int i = str.Length - 1; i >= 0; i--)
+            {
+                reverse += str[i].ToString();
+            }
+            return reverse;
+        }
+
+        //Find no. of vowels, consonants, integers and sp characters in a sentence
+        public string CountCharacters(string str)
+        {
+            int CountVowels = 0;
+            int CountConsonants = 0;
+            int CountIntegers = 0;
+            int CountSpChar = 0;
+            foreach (char c in str)
+            {
+                if (!char.IsWhiteSpace(c))
+                {
+                    if (c == 'a' || c == 'A' || c == 'e' || c == 'E' || c == 'i' || c == 'I' || c == 'o' || c == 'O' || c == 'u' || c == 'U')
+                        CountVowels++;
+                    else if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'))
+                        CountConsonants++;
+                    else if (c >= '0' && c <= '9')
+                        CountIntegers++;
+                    else
+                        CountSpChar++;
+                }
+            }
+
+            return "No. of Vowels : " + CountVowels + "\nNo. of Consonants : " + CountConsonants + "\nNo. of Integers : " + CountIntegers + "\nNo. of Special Charecters : " + CountSpChar;
+        }
+
+        //Change case to upper case
+        public string ToUpperCase(string str)
+        {
+            //foreach (char c in str)
+            //    char.ToUpper(c);
+            return str.ToUpper();
+        }
+
+        //Change sentence to proper case
+        public string ToProperCase(string str)
+        {
+            string proper = "";
+            proper += (char.ToUpper(str[0]));
+            for (int i = 1; i < str.Length; i++)
+            {
+                if (char.IsWhiteSpace(str[i-1]))
+                {
+                    proper += char.ToUpper(str[i]);
+                }
+                else
+                    proper += str[i];
+            }
+            return proper;
+        }
+
+        //Combine two sentences
+        public string CombineTwoSentences(string str1, string str2)
+        {
+            return str1 + " " + str2;
+        }
+
+        //Remove extra spaces in a sentence
+        /* public string RemoveExtraSpace(string str)
+         {
+             //string Space = "\\s+";
+             List<char> space = new List<char>();
+             int countspace = 0;
+             for (int i = 0; i< str.Length; i++)
+             {
+                 if (char.IsWhiteSpace(str[i]))
+                 {
+                     countspace++;
+                     for (int j = i + 1; j < str.Length; j++)
+                     {
+                         if (char.IsWhiteSpace(str[j]))
+                         {
+                             countspace++;
+                         }
+                         else
+                         {
+                             space = str.ToList().GetRange(i, j);
+                             Console.WriteLine(space + "str");
+                             break;
+                         }
+                     }
+                     string space1 = space.ToString();
+                     if (countspace < 1)
+                         str.Replace(space1, " ");
+                 }
+             }
+             return str;
+         }*/
+
+
+        public string RemoveExtraSpace(string str)
+        {
+            StringBuilder sb = new StringBuilder();
+            bool lastWasSpace = true;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                if (Char.IsWhiteSpace(str[i]) && lastWasSpace)
+                {
+                    continue;
+                }
+
+                lastWasSpace = Char.IsWhiteSpace(str[i]);
+
+                sb.Append(str[i]);
+            }
+
+            if (Char.IsWhiteSpace(sb[sb.Length - 1]))
+            {
+                sb.Remove(sb.Length - 1, 1);
+            }
+
+            return sb.ToString();
+        }
+
+            //Count no. of words in a sentence
+        public int NoOfWords(string str)
+        {
+            int count = 1;
+            foreach (char c in str)
+            {
+                if (char.IsWhiteSpace(c) || c == '\n'  || c == '\t')
+                    count++;
+            }
+            return count;
+        }
+
+        //Search a substring in a sentence
+        public string Substring(string str, string substring)
+        {
+            if (str.Contains(substring) == true)
+                return "The given substring " + substring + " is present in the string";
+            else
+                return "The given substring" + substring + " is not present in the string";
+        }
+
+        //Find the no. of occurences of a substring in a sentence
+        public int FindOccurence(string str, string substring)
+        {
+            int count = 0;
+            int a = 0;
+
+            while ((a = str.IndexOf(substring, a)) != -1)
+            {
+                a += substring.Length;
+                count++;
+            }
+            return count;
+        }
+    }
+}
